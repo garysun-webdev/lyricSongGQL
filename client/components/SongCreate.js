@@ -26,8 +26,9 @@ class SongCreate extends Component {
   render() {
     return(
       <div>
+        <Link to="/">Back</Link>
+        <h3>Create New Song</h3>
         <form onSubmit={this.submitForm.bind(this)}>
-          <h3>Create New Song</h3>
           <label>Song Title:</label>
           <input 
             onChange={event => this.setState({title: event.target.value})}
@@ -46,6 +47,7 @@ const mutation = gql`
   mutation AddSong($title: String){
     addSong(title: $title){
       title
+      id
     }
   }
 `;

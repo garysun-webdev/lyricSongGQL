@@ -13,7 +13,9 @@ import { ApolloProvider } from 'react-apollo';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 //{} -> default consumption, like'/graphql' is the root
-const client = new ApolloClient({});
+const client = new ApolloClient({
+  dataIdFromObject: o => o.id
+});
 
 const Root = () => {
   return (
